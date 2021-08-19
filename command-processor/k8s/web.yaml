@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: command-processor
+spec:
+  ports:
+  - port: 8080
+    name: http
+  type: LoadBalancer
+  selector:
+    app: web
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: command-processor
+spec:
+  selector:
+    matchLabels:
+      app: command-processor
+  template:
+    metadata:
+      labels:
+        app: command-processor
+    spec:
+      containers:
+      - name: command-processor
+        image: skaffold-buildpacks
+        ports:
+          - containerPort: 8080

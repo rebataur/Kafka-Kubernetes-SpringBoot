@@ -1,0 +1,1 @@
+curl http://192.168.99.147:30263/greetings?message=hello; echo

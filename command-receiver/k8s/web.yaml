@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: command-receiver
+spec:
+  ports:
+  - port: 8080
+    name: http
+  type: LoadBalancer
+  selector:
+    app: command-receiver
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: command-receiver
+spec:
+  selector:
+    matchLabels:
+      app: command-receiver
+  template:
+    metadata:
+      labels:
+        app: command-receiver
+    spec:
+      containers:
+      - name: command-receiver
+        image: skaffold-buildpacks
+        ports:
+          - containerPort: 8080
+
+
+
+
+
+

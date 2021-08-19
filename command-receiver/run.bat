@@ -1,0 +1,1 @@
+mvn clean install && java -jar target\spring-cloud-stream-kafka-sample-0.0.1-SNAPSHOT.jar
