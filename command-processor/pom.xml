@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.jromanmartin.kafka</groupId>
+    <groupId>com.rebataur.kafka</groupId>
     <artifactId>spring-cloud-stream-kafka-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
